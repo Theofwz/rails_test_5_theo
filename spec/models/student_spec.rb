@@ -16,4 +16,5 @@ describe Student do
     it { is_expected.to have_many (:student_infomations) }
     it { is_expected.to have_many (:schools) }
   end
+
 end

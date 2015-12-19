@@ -6,6 +6,7 @@ class Student < ActiveRecord::Base
   validates :name,           presence: true
   validates :dob,            presence: true
   validate :age_check?
+  validate :schoolmates
 
   def age_check?
     return if dob.blank?
