@@ -12,4 +12,8 @@ describe Student do
       expect(student.errors.messages).to include(dob: ['must be greater than or equal 18 age'])
     end
   end
+  context 'Association' do
+    it { is_expected.to have_many (:student_infomations) }
+    it { is_expected.to have_many (:schools) }
+  end
 end
