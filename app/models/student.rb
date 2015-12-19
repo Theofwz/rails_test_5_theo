@@ -1,5 +1,8 @@
 class Student < ActiveRecord::Base
 
+  has_many :student_infomations
+  has_many :schools, :through => :student_infomations
+
   validates :name,           presence: true
   validates :dob,            presence: true
   validate :age_check?

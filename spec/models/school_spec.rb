@@ -6,5 +6,8 @@ describe School do
     it { is_expected.to validate_presence_of :address }
     it { is_expected.to validate_presence_of :school_type }
   end
+  context 'Association' do
+    it { is_expected.to have_many :student_infomation }
+  end
 end
 
