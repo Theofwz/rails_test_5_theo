@@ -14,4 +14,10 @@ class Student < ActiveRecord::Base
     end
   end
 
+  def schoolmates
+    school_id = schools.pluck(:id)
+    student_id = StudentInfomation.where(school_id: school_id).pluck(:student_id)
+    Student.where(id: student_id).pluck(:name)
+  end
+
 end
